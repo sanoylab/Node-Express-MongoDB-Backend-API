@@ -1,11 +1,11 @@
-# Company Managment Backend API
+# Node-Express-MongoDB Backend API
 
 A NodeJs, Express, MongoDB backend api.
 
 DEMO: https://company-management-node-expres.herokuapp.com/api/v1/
 
 
-![alt text](https://raw.githubusercontent.com/sanoylab/Node-Express-MongoDB-Backend-API/master/screenshot.png)
+![alt text](https://raw.githubusercontent.com/sanoylab/Node-Express-MongoDB-Backend-API/master/screenshot.PNG)
 
 
 ## Contributing
