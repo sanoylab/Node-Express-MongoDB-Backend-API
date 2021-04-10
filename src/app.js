@@ -10,7 +10,7 @@ const errors = require('./error-middleware');
 
 const router =  require('./routers/index');
 const app = express();
-
+app.use(cors());
 const options = {
     definition: {
       openapi: "3.0.0",
@@ -42,7 +42,7 @@ const options = {
 app.use("/api/v1", router);
 const swaggerSpec = swaggerJsDoc(options);
 
-app.use(cors());
+
 app.use(express.json());
 
 app.use("/api/v1", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
