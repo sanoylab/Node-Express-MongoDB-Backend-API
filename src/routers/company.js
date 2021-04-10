@@ -26,7 +26,7 @@ const {
  *       properties:
  *         id:
  *           type: string
- *           description: The auto-generated id of the compant
+ *           description: The auto-generated id of the company
  *         name:
  *           type: string
  *           description: Company name
