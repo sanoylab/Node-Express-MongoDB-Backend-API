@@ -5,12 +5,17 @@ const swaggerUi = require("swagger-ui-express");
 
 require('./db/connection');
 require('dotenv').config();
+
 const PORT = process.env.PORT;
+
 const errors = require('./error-middleware');
 
 const router =  require('./routers/index');
 const app = express();
+
 app.use(cors());
+app.use(express.json());
+
 const options = {
     definition: {
       openapi: "3.0.0",
@@ -18,10 +23,10 @@ const options = {
         title: "Company Management Backend API",
         description:
           "A simple backend API to manage companies",
-        termsOfService: "http://companymanagement.com/terms/",
+        termsOfService: "https://company-management-node-expres.herokuapp.com/api/v1/",
         contact: {
           name: "API Support",
-          url: "http://www.companymanagement.com/support",
+          url: "https://company-management-node-expres.herokuapp.com/api/v1/",
           email: "expertsanoy@gmail.com",
         },
         license: {
@@ -39,16 +44,16 @@ const options = {
     },
     apis: ["src/routers/*.js"],
   };
+
 app.use("/api/v1", router);
+
 const swaggerSpec = swaggerJsDoc(options);
-
-
-app.use(express.json());
 
 app.use("/api/v1", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(errors.notFound);
 app.use(errors.errorHandler);
+
 app.listen(PORT, ()=>{
     console.log(`Server is started on PORT: ${PORT}`)
 });

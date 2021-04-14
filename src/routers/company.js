@@ -85,7 +85,7 @@ router.get('/', getCompanies);
  *     responses:
  *       200:
  *         description: The company description by id
- *         contens:
+ *         contents:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Company'
@@ -106,7 +106,6 @@ router.get('/:id', getCompany);
  *         application/json:
  *           schema:
  *             $ref: '#/components/schemas/Company'
-
  *     responses:
  *       200:
  *         description: The company was successfully created
@@ -151,7 +150,7 @@ router.patch('/:id', updateCompany);
 
 /**
  * @swagger
- * //api/v1/companies/{id}:
+ * /api/v1/companies/{id}:
  *   delete:
  *     summary: Remove the company by id
  *     tags: [Company]
